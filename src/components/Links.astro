@@ -1,0 +1,17 @@
+---
+interface Props {
+  id?: string;
+  href?: string;
+  target?: string;
+}
+const { id, href, target } = Astro.props;
+---
+
+<a
+  class="flex gap-2 h-full text-center cursor-pointer text-base content-center items-center text-textSecondary hover:text-primary"
+  id={id}
+  href={href}
+  target={target}
+>
+  <slot />
+</a>

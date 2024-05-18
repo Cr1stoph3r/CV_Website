@@ -1,7 +1,208 @@
 ---
-import ThemeThoggle from "./ThemeThoggle.astro";
+import TypeWritter from "./TypeWritter.astro";
+import Links from "./Links.astro";
+
+const roles = [
+  "Ingeniero en informática",
+  "Desarrollador full stack",
+  "Analista de datos",
+];
 ---
 
-<header class="w-full h-16 bg-white dark:bg-gray-500">
-  <ThemeThoggle />
+<header class="w-full h-60 flex box-border bg-primary dark:bg-primaryDark">
+  <img src="/Perfil.png" alt="Foto perfil" class="w-auto bg-secondary" />
+  <div
+    class="w-full flex justify-between bg-primaryDark text-white py-6 pl-12 pr-4 box-border"
+  >
+    <div class="w-6/12">
+      <h1 class="text-4xl mb-3 font-bold">
+        Cristopher Alexis <br />
+        Núñez Salazar
+      </h1>
+      <TypeWritter textList={roles} />
+      <ul class="mt-4 flex flex-col gap-2">
+        <li>
+          <Links id="buttomMail" href="mailto:cristopherduoc@gmail.com">
+            <svg
+              class=""
+              width="24"
+              height="24"
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+              ><defs
+                ><clipPath id="a"><path d="M0 0h32v32H0z"></path></clipPath
+                ></defs
+              ><g data-name="Group 3084" clip-path="url(#a)"
+                ><g data-name="Group 3083"
+                  ><g data-name="Group 3082"
+                    ><g data-name="Group 3081"
+                      ><g data-name="Group 3080"
+                        ><g data-name="Group 3079"
+                          ><g data-name="Group 3078"
+                            ><g data-name="Group 3077"
+                              ><path
+                                data-name="Path 3980"
+                                d="M31.626 6.917c0-.015-.016-.026-.021-.041a1 1 0 0 0-.056-.108 1 1 0 0 0-.131-.2 1 1 0 0 0-.088-.087 1.5 1.5 0 0 0-.3-.186 1 1 0 0 0-.354-.071H1.324a1 1 0 0 0-.354.071 1 1 0 0 0-.1.052 1 1 0 0 0-.2.134 1 1 0 0 0-.088.087 1 1 0 0 0-.132.2 1 1 0 0 0-.055.107c-.005.015-.016.026-.021.041a1 1 0 0 0-.05.312V24.77a1 1 0 0 0 1 1h29.352a1 1 0 0 0 1-1V7.23a1 1 0 0 0-.05-.313m-1.95 16.5-9.662-7.1 9.662-7.105ZM2.324 9.206l9.662 7.105-9.662 7.1Zm1.2 14.565 9.3-6.84 2.577 1.9a1 1 0 0 0 1.186 0l2.577-1.9 9.3 6.84Zm24.1-15.542L16 16.78 4.372 8.229Z"
+                                fill="#ffffff80"></path></g
+                            ></g
+                          ></g
+                        ></g
+                      ></g
+                    ></g
+                  ></g
+                ></g
+              ></svg
+            >
+            <span>cristopherduoc@gmail.com</span>
+          </Links>
+        </li>
+        <li>
+          <Links href="tel:+56984126119">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path
+                d="M10 2.5h-.5v.527c0 .212 0 .418.023.588a1 1 0 0 0 .27.592 1 1 0 0 0 .592.27c.17.023.376.023.588.023h2.054c.212 0 .418 0 .588-.023a1 1 0 0 0 .592-.27 1 1 0 0 0 .27-.592c.023-.17.023-.376.023-.588V2.5z"
+                stroke="#ffffff80"></path><rect
+                x="4.5"
+                y="2.5"
+                width="14"
+                height="20"
+                rx="1.5"
+                stroke="#ffffff80"></rect><circle
+                cx="12"
+                cy="18"
+                r="1.5"
+                fill="#ffffff80"></circle></svg
+            >
+            <span>+56 9 8412 6119</span>
+          </Links>
+        </li>
+      </ul>
+    </div>
+    <ul class="w-4/12 grid gap-3">
+      <li class="content-center">
+        <Links href="https://linkedin.com/in/crisns-dev" target="_blank">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              fill-rule="evenodd"
+              d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m0 2v16h16V4zm7.452 5.452A3 3 0 0 1 13 9h1c1.394 0 3 1.147 3 3v4h-2v-4c0-.576-.594-1-1-1h-1c-.406 0-1 .424-1 1v4h-2V9h1zM8 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2m1 8H7V9h2z"
+            ></path></svg
+          >
+          <span class="truncate">linkedin.com/in/crisns-dev</span>
+        </Links>
+      </li>
+      <li class="content-center">
+        <Links href="https://github.com/Cr1stoph3r" target="_blank">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24m3.163 21.783h-.093a.5.5 0 0 1-.382-.14.5.5 0 0 1-.14-.372v-1.406q.01-.701.01-1.416a3.7 3.7 0 0 0-.151-1.028 1.83 1.83 0 0 0-.542-.875 8 8 0 0 0 2.038-.471 4.05 4.05 0 0 0 1.466-.964c.407-.427.71-.943.885-1.506a6.8 6.8 0 0 0 .3-2.13 4.1 4.1 0 0 0-.26-1.476 3.9 3.9 0 0 0-.795-1.284 2.8 2.8 0 0 0 .162-.582q.05-.3.05-.604 0-.392-.09-.773a5 5 0 0 0-.221-.763.3.3 0 0 0-.111-.02h-.11q-.346.004-.674.111a5 5 0 0 0-.703.26 7 7 0 0 0-.661.343q-.322.191-.573.362a9.6 9.6 0 0 0-5.143 0 14 14 0 0 0-.572-.362 6 6 0 0 0-.672-.342 4.5 4.5 0 0 0-.705-.261 2.2 2.2 0 0 0-.662-.111h-.11a.3.3 0 0 0-.11.02 6 6 0 0 0-.23.763q-.08.382-.081.773 0 .304.051.604t.16.582A3.9 3.9 0 0 0 5.702 10a4.1 4.1 0 0 0-.263 1.476 6.9 6.9 0 0 0 .292 2.12c.181.563.483 1.08.884 1.516.415.422.915.75 1.466.964.653.25 1.337.41 2.033.476a1.8 1.8 0 0 0-.452.633 3 3 0 0 0-.2.744 2.75 2.75 0 0 1-1.175.27 1.8 1.8 0 0 1-1.065-.3 2.9 2.9 0 0 1-.752-.824 3 3 0 0 0-.292-.382 2.7 2.7 0 0 0-.372-.343 1.8 1.8 0 0 0-.432-.24 1.2 1.2 0 0 0-.481-.101q-.06.002-.12.01a.7.7 0 0 0-.162.02.4.4 0 0 0-.13.06.12.12 0 0 0-.06.1.33.33 0 0 0 .14.242q.14.111.232.171l.03.021q.2.155.382.333.169.148.3.33.136.178.231.381.11.2.231.463c.188.474.522.875.954 1.145.453.243.961.364 1.476.351q.262 0 .522-.03.258-.041.515-.091v1.743a.5.5 0 0 1-.533.521h-.062a10.286 10.286 0 1 1 6.324 0z"
+            ></path></svg
+          >
+          <span>github.com/Cr1stoph3r</span>
+        </Links>
+      </li>
+      <li class="content-center">
+        <Links
+          href="https://github.com/Cr1stoph3r/PortafolioPresentacion"
+          target="_blank"
+        >
+          <svg
+            width="24px"
+            height="24px"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M0 2v16h20V2zm1 1h18v2H1zm0 3h18v11H1zm6.646 2.146L4.293 11.5l3.353 3.354.708-.708L5.707 11.5l2.647-2.646zm4.708 0-.708.708 2.647 2.646-2.647 2.646.708.708 3.353-3.354z"
+              fill="#222"></path></svg
+          >
+          <span>Repositorio</span>
+        </Links>
+      </li>
+
+      <li class="content-center">
+        <Links href="/CRISTOPHER_NUNEZ_CV.pdf" target="_blank">
+          <svg
+            height="24"
+            width="24"
+            version="1.1"
+            id="_x32_"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            xml:space="preserve"
+            ><style>
+              .st0 {
+                fill: #000;
+              }
+            </style><path
+              class="st0"
+              d="M378.413 0H195.115L185.8 9.314 57.02 138.102l-9.314 9.314v278.69c0 47.36 38.528 85.895 85.896 85.895h244.811c47.353 0 85.881-38.535 85.881-85.895V85.896C464.294 38.528 425.766 0 378.413 0m54.084 426.105c0 29.877-24.214 54.091-54.084 54.091H133.602c-29.884 0-54.098-24.214-54.098-54.091V160.591h83.716c24.885 0 45.077-20.178 45.077-45.07V31.804h170.116c29.87 0 54.084 24.214 54.084 54.092z"
+            ></path><path
+              class="st0"
+              d="M171.947 252.785h-28.529c-5.432 0-8.686 3.533-8.686 8.825v73.754c0 6.388 4.204 10.599 10.041 10.599 5.711 0 9.914-4.21 9.914-10.599v-22.406c0-.545.279-.817.824-.817h16.436c20.095 0 32.188-12.226 32.188-29.612.001-17.658-11.953-29.744-32.188-29.744m-1.228 42.103h-15.208c-.545 0-.824-.272-.824-.81v-23.23c0-.545.279-.816.824-.816h15.208c8.42 0 13.447 5.027 13.447 12.498.001 7.47-5.027 12.358-13.447 12.358m79.472-42.103h-21.868c-5.432 0-8.686 3.533-8.686 8.825v74.843c0 5.3 3.253 8.693 8.686 8.693h21.868c19.69 0 31.923-6.249 36.81-21.324 1.76-5.3 2.723-11.681 2.723-24.857s-.964-19.557-2.723-24.856c-4.888-15.075-17.12-21.324-36.81-21.324m17.665 64.111c-2.318 7.331-8.965 10.459-18.21 10.459h-9.23c-.545 0-.824-.272-.824-.816v-55.146c0-.545.279-.817.824-.817h9.23c9.245 0 15.892 3.128 18.21 10.46.95 3.128 1.62 8.56 1.62 17.93s-.671 14.802-1.62 17.93m93.311-64.111h-44.812c-5.432 0-8.7 3.533-8.7 8.825v73.754c0 6.388 4.218 10.599 10.055 10.599 5.697 0 9.914-4.21 9.914-10.599v-26.351c0-.538.265-.81.81-.81h26.086c5.837 0 9.23-3.532 9.23-8.56s-3.393-8.553-9.23-8.553h-26.086c-.545 0-.81-.272-.81-.817v-19.425c0-.545.265-.816.81-.816h32.733c5.572 0 9.245-3.666 9.245-8.553-.001-5.029-3.674-8.694-9.245-8.694"
+            ></path></svg
+          >
+          <span>CV version PDF</span>
+        </Links>
+      </li>
+      <li class="content-center">
+        <Links href="https://maps.app.goo.gl/q3GgrgHaDdz29hhd8" target="_blank">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M8 0a6 6 0 0 1 4.82 9.574L8 16 3.18 9.574A6 6 0 0 1 8 0m0 2a4 4 0 0 0-3.217 6.378L8 12.667l3.217-4.289A4 4 0 0 0 8 2m0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4"
+            ></path></svg
+          >
+          <span class="truncate">Santiago, Chile</span>
+        </Links>
+      </li>
+    </ul>
+  </div>
 </header>
+<style>
+  /* ul -> li */
+  ul li svg path {
+    width: 24px;
+    height: 24px;
+    fill: var(--secondary-text);
+    stroke: var(--secondary-text);
+  }
+  /* hover path and rect*/
+  ul li:hover svg path {
+    fill: var(--primary);
+    stroke: var(--primary);
+  }
+  ul li:hover svg rect {
+    stroke: var(--primary);
+  }
+</style>
+<!-- <script>
+  const buttomMail = document.getElementById("buttomMail");
+
+  // funcion para copiar al portapapeles
+  const copyToClipboard = (text: string) => {
+    const input = document.createElement("input");
+    input.value = text;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input);
+  };
+  buttomMail?.addEventListener("click", () =>
+    copyToClipboard("cristopherduoc@gmail.com")
+  );
+</script> -->

@@ -1,0 +1,110 @@
+---
+interface Props {
+  textList: string[];
+}
+
+const { textList } = Astro.props;
+---
+
+<div class="w-full h-auto">
+  <span
+    id="role"
+    class="text-2xl font-light typewriter"
+    data-roles={JSON.stringify(textList)}></span>
+</div>
+<style>
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 14em;
+    }
+  }
+
+  @keyframes blink {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: white;
+    }
+  }
+
+  .typewriter {
+    border-right: 3px solid white;
+    overflow: hidden;
+    white-space: nowrap;
+    animation:
+      typewriter 1s steps(44) forwards,
+      blink 500ms steps(44) infinite normal; /* Combined animations */
+  }
+</style>
+<script>
+  //   const { textList: roles } = Astro.props || ["Texto 1", "Segundo texto"];
+  const roleSpan = document.getElementById("role");
+  if (roleSpan) {
+    const rawData = roleSpan.getAttribute("data-roles");
+    console.log(rawData);
+    if (rawData) {
+      const roles = JSON.parse(rawData); // Ahora es seguro usar JSON.parse
+      let roleIndex = 0;
+      let charIndex = 0;
+      let isAdding = true;
+      let displayDuration = 3000;
+      let delayDelete = 1000;
+
+      // Aquí continuarías con el resto de tu lógica para la animación de texto.
+      // Asegúrate de que todo el código que depende de 'roles' esté dentro de este bloque.
+      function updateRole() {
+        const roleSpan = document.getElementById("role") || { textContent: "" };
+        const currentRole = roles[roleIndex];
+
+        if (isAdding) {
+          if (charIndex < currentRole.length) {
+            // Add next character
+            roleSpan.textContent += currentRole[charIndex++];
+            setTimeout(updateRole, 50); // Repeat every 50ms
+          } else {
+            // After last character, wait for display duration before removing
+            setTimeout(() => {
+              isAdding = false;
+              updateRole();
+            }, displayDuration);
+          }
+        } else {
+          if (charIndex >= 0) {
+            // Remove last character
+            roleSpan.textContent = currentRole.slice(0, charIndex--);
+            setTimeout(updateRole, 50); // Repeat every 50ms
+          } else {
+            // Reset
+            roleIndex = (roleIndex + 1) % roles.length;
+            charIndex = 0;
+            roleSpan.textContent = ""; // Clear only if necessary
+            setTimeout(() => {
+              isAdding = true;
+              updateRole();
+            }, delayDelete); // Wait before adding next role
+          }
+        }
+      }
+
+      // Start the process only after content loads
+      window.addEventListener("DOMContentLoaded", () => {
+        updateRole();
+      });
+    } else {
+      console.error("No se encontró el atributo 'data-roles'.");
+    }
+  } else {
+    console.error("No se encontró el elemento con ID 'role'.");
+  }
+  //   const roles = JSON.parse(roleSpan.getAttribute('data-roles'));
+  //   let roleIndex = 0;
+  //   let charIndex = 0; // Index to control character position
+  //   let isAdding = true; // Flag to control adding or removing characters
+  //   let displayDuration = 3000; // Time in milliseconds to display full text before deletion (adjust as needed)
+  //   let delayDelete = 1000; // Time in milliseconds to wait before deleting text (adjust as needed)
+</script>
