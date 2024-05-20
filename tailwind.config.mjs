@@ -11,9 +11,14 @@ export default {
 				textPrimary: '#4f5f76',
 				textSecondary: '#FFFFFF80',
 				textGray: '#4f5f7690',
-
+				textBlue: '#2b6cb0',
 			},
 		},
 	},
+	variants: {
+		extend: {
+		  margin: ['marker'], 
+		},
+	  },
 	plugins: [],
 }

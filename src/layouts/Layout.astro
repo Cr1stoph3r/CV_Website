@@ -33,6 +33,14 @@ const { title } = Astro.props;
   <body class="bg-primary w-full h-screen dark:bg-primaryDark">
     <slot />
   </body>
+  <footer class="w-full pb-10 text-center text-primaryDark">
+    Este CV fue creado con Astro y tailwindcss desde 0, inspirado en el diseño
+    de <a
+      class="text-textBlue underline underline-offset-2 cursor-pointer"
+      href="https://themes.3rdwavemedia.com/demo/bs5/pillar/#"
+      target="_blank">Xiaoying Riley</a
+    >
+  </footer>
 </html>
 <style is:global>
   :root {
