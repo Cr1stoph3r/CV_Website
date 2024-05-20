@@ -1,4 +1,6 @@
+# Run project
+
 ```sh
-npm i
+npm i -- --template basics
 npm run dev
 ```

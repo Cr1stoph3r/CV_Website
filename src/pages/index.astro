@@ -2,12 +2,20 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Header from "../components/Header.astro";
+import Summary from "../components/Summary.astro";
+import WorkExperience from "../components/WorkExperience/WorkExperience.astro";
+import ContactButton from "../components/ContactButton.astro";
 ---
 
 <Layout title="CrisNS.dev">
   <main class="w-full h-auto flex justify-center py-16">
-    <section class="w-1/2 h-full shadow-xl shadow-gray-600">
+    <section class="w-7/12 h-full shadow-xl shadow-gray-600 pb-8">
       <Header />
+      <div class="w-full px-14">
+        <Summary />
+        <WorkExperience />
+      </div>
     </section>
   </main>
+  <ContactButton />
 </Layout>

@@ -8,7 +8,9 @@ export default {
 				primaryDark: '#414853',
 				secondary: '#949ead94',
 				secondaryHover: '#ffffff',
-				textSecondary: '#FFFFFF80'
+				textPrimary: '#4f5f76',
+				textSecondary: '#FFFFFF80',
+				textGray: '#4f5f7690',
 
 			},
 		},

@@ -1,0 +1,44 @@
+---
+interface Tooltip {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<style>
+  /* Estilos para el tooltip */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--primary-dark);
+    color: var(--primary);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+</style>
+
+<div>
+  <div class="tooltip">
+    <slot />
+    <span class="tooltiptext bg-primaryDark text-primary p-2 rounded shadow-lg"
+      >{text}</span
+    >
+  </div>
+</div>

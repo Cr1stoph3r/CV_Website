@@ -1,0 +1,56 @@
+---
+import Experience from "./Experience.astro";
+import Skills from "./Skills.astro";
+import Others from "./Others.astro";
+---
+
+<div class="mt-6 flex justify-between gap-8">
+  <div class="w-9/12">
+    <h2
+      class="text-2xl text-textPrimary pb-3 mb-4 font-bold border-b border-primaryDark"
+    >
+      Experiencia laboral
+    </h2>
+    <div class="timeline flex flex-col gap-12">
+      <Experience
+        position="Desarrollador de software full Stack"
+        description="Desarrollo de aplicaciones web y móviles para diferentes clientes. Implementación de soluciones tecnológicas para mejorar la eficiencia de los procesos de negocio."
+        workPeriod="Enero 2024 – presente"
+        company="Emtci"
+        technologies={["React", "Node.js", "MongoDB", "Express", "Docker"]}
+      >
+        AKI</Experience
+      >
+      <Experience
+        position="Desarrollador de software full Stack"
+        description="Desarrollo de aplicaciones web y móviles para diferentes clientes. Implementación de soluciones tecnológicas para mejorar la eficiencia de los procesos de negocio."
+        workPeriod="Enero 2024 – presente"
+        company="Emtci"
+        technologies={["React", "Node.js", "MongoDB", "Express", "Docker"]}
+      >
+        AKI</Experience
+      >
+    </div>
+  </div>
+  <div class="w-3/12">
+    <Skills />
+    <Others />
+  </div>
+</div>
+
+<style>
+  .timeline {
+    position: relative; /* Asegúrate de que .timeline tiene position: relative */
+  }
+  .timeline::before {
+    content: "";
+    position: absolute; /* Cambiado a 'absolute' */
+    left: 0; /* Ajusta según la alineación deseada */
+    top: 4px;
+    width: 3px;
+    height: 98%;
+    background-color: var(
+      --secondary
+    ); /* Asegúrate de que el color esté definido correctamente */
+  }
+</style>

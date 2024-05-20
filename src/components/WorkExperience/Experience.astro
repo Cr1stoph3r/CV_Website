@@ -1,0 +1,45 @@
+---
+interface Props {
+  position: string;
+  workPeriod: string;
+  description: string;
+  company: string;
+  technologies: string[];
+}
+
+const { position, workPeriod, description, company, technologies } =
+  Astro.props;
+---
+
+<article class="flex flex-col text-textPrimary">
+  <div class="flex justify-between font-bold">
+    <h3 class="text-xl">{position}</h3>
+    <span class="text-lg">{company}</span>
+  </div>
+  <span class="my-1 text-md text-textGray font-bold">{workPeriod}</span>
+  <p class="text-md">{description}</p>
+  <h3 class="text-xl font-bold my-2">Logros:</h3>
+  <slot />
+  <h3 class="text-xl font-bold my-2">Tecnologías usadas:</h3>
+  <div>
+    {technologies.map((tech) => <span>{tech}</span>)}
+  </div>
+</article>
+<style>
+  article {
+    margin-left: 20px;
+    position: relative;
+  }
+  article::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: -26px;
+    top: 3px;
+    width: 15px;
+    height: 15px;
+    border: 4px solid var(--primary-dark);
+    background: white;
+    border-radius: 50%;
+  }
+</style>
