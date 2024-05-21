@@ -5,5 +5,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://Cr1stoph3r.github.io',
-  base: '/PortafolioPresentacion/'
+  base: '/CV_Website/'
 });
