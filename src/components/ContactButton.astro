@@ -2,7 +2,7 @@
 import Tooltip from "./Tooltip.astro";
 ---
 
-<div class="fixed bottom-4 right-16">
+<div class="fixed bottom-4 right-4 lg:right-16">
   <Tooltip text="Whatsapp">
     <a
       href="https://wa.me/56984126119"
@@ -16,13 +16,15 @@ import Tooltip from "./Tooltip.astro";
       />
     </a>
   </Tooltip>
-  <Tooltip text="Linkedin">
-    <a href="https://linkedin.com/in/crisns-dev" target="_blank">
-      <img
-        src="/linkedin.svg"
-        alt="Linkedin icon"
-        class="cursor-pointer animate-bounce"
-      />
-    </a>
-  </Tooltip>
+  <div class="hidden lg:block">
+    <Tooltip text="Linkedin">
+      <a href="https://linkedin.com/in/crisns-dev" target="_blank">
+        <img
+          src="/linkedin.svg"
+          alt="Linkedin icon"
+          class="cursor-pointer animate-bounce"
+        />
+      </a>
+    </Tooltip>
+  </div>
 </div>
